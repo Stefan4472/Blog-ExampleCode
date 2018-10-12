@@ -1,3 +1,6 @@
+#ifndef ITEM_TYPE_H
+#define ITEM_TYPE_H
+
 // defines types of items recognized by the engine
 enum class ItemType
 {
@@ -10,3 +13,5 @@ enum class ItemType
   SHORT_SWORD,
   NUM_TYPES
 };
+
+#endif
