@@ -2,6 +2,7 @@
 #define INVENTORY_H
 
 #include <vector>
+#include <iostream>
 #include <stdexcept>
 #include "item_stack.h"
 
@@ -17,14 +18,19 @@ NOTE: THIS IS A SIMPLE DEMO. IT IS NOT MEANT TO BE GENIUS CODE!!!!
 class Inventory
 {
   public:
-    int mainInvRows, mainInvCols, hotbarSlots;
+    // TODO: RENAME TO ROWS, COLS
+    int mainInvRows, mainInvCols;
     vector<vector<ItemStack>> mainInvItems;
-    vector<ItemStack> hotbarItems;
-    int usedSlots;
 
-    Inventory(int mainInvRows, int mainInvCols, int hotbarSize);
+    Inventory(int mainInvRows, int mainInvCols);
 
-    void addItemStack(ItemStack toAdd, int row, int col, bool inHotbar);
+    // returns the number of ItemStacks in mainInvItems that are empty (have
+    // ItemType::NONE). Iterates through mainInvItems, so it's O(m*n).
+    // NOTE: we should really keep a "usedSlots" counter, but to keep this demo
+    // simple we'll do it the not-so-efficient way
+    int getNumUsedSlots();
+    // prints size and contents of this inventory in a human-readable way
+    void printDebug();
 
     // save state to the given char array. Takes the array to be saved to, as
     // well as the maximum number of bytes it may use. Returns the number of

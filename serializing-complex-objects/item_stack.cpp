@@ -8,11 +8,6 @@ ItemStack::ItemStack()
 
 ItemStack::ItemStack(ItemType itemType, int size)
 {
-  if (itemType == ItemType::NUM_TYPES)
-  {
-    throw runtime_error("Invalid ItemType");
-  }
-  
   this->itemType = itemType;
   this->size = size;
 }
