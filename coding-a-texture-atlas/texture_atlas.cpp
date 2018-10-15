@@ -19,12 +19,12 @@ TextureAtlas::TextureAtlas(SDL_Texture* atlasImg)
 
 int TextureAtlas::getWidth(TextureId textureId)
 {
-  return TEXTURE_REGIONS[int(textureId)].w;
+  return TEXTURE_REGIONS[static_cast<int>(textureId)].w;
 }
 
 int TextureAtlas::getHeight(TextureId textureId)
 {
-  return TEXTURE_REGIONS[int(textureId)].h;
+  return TEXTURE_REGIONS[static_cast<int>(textureId)].h;
 }
 
 void TextureAtlas::drawImg(SDL_Renderer* renderer, TextureId textureId, int x, int y)
