@@ -15,16 +15,19 @@ enum class ItemType
   SHORT_SWORD
 };
 
-// item names corresponding to the ItemType enum. Used for debugging.
-const string ITEM_NAMES[7] =
+namespace Item
 {
-  "The NULL Item",
-  "Bread Loaf",
-  "Chicken Leg",
-  "Can of Beans",
-  "Green Potion",
-  "Baseball Bat",
-  "Short Sword"
-};
+  // item names corresponding to the ItemType enum. Used for debugging.
+  const string ITEM_NAMES[7] =
+  {
+    "The NULL Item",
+    "Bread Loaf",
+    "Chicken Leg",
+    "Can of Beans",
+    "Green Potion",
+    "Baseball Bat",
+    "Short Sword"
+  };
+}
 
 #endif

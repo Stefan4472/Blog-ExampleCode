@@ -18,14 +18,13 @@ NOTE: THIS IS A SIMPLE DEMO. IT IS NOT MEANT TO BE GENIUS CODE!!!!
 class Inventory
 {
   public:
-    // TODO: RENAME TO ROWS, COLS
-    int mainInvRows, mainInvCols;
-    vector<vector<ItemStack>> mainInvItems;
+    int rows, cols;
+    vector<vector<ItemStack>> items;
 
-    Inventory(int mainInvRows, int mainInvCols);
+    Inventory(int rows, int cols);
 
-    // returns the number of ItemStacks in mainInvItems that are empty (have
-    // ItemType::NONE). Iterates through mainInvItems, so it's O(m*n).
+    // returns the number of ItemStacks in items that are empty (have
+    // ItemType::NONE). Iterates through items, so it's O(m*n).
     // NOTE: we should really keep a "usedSlots" counter, but to keep this demo
     // simple we'll do it the not-so-efficient way
     int getNumUsedSlots();
@@ -35,10 +34,10 @@ class Inventory
     // save state to the given char array. Takes the array to be saved to, as
     // well as the maximum number of bytes it may use. Returns the number of
     // bytes that were actually written to the array.
-    int serialize(char bytes[], int maxSize);
+    int serialize(char buffer[], int maxSize);
     // creates a new Inventory object by deserializing the given char[]. Also
     // given numBytes, which is the number of bytes the Inventory used to
     // serialize itself initially
-		static Inventory* deserialize(char bytes[], int numBytes);
+		static Inventory* deserialize(char buffer[], int numBytes);
 };
 #endif
